@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Vue from 'vue/dist/vue.esm';","map":{"version":3,"sources":["/Users/Home/Desktop/Ruby Projects/projekt/app/javascript/packs/projekt.js"],"names":["Vue"],"mappings":"AAAA,OAAOA,GAAP,MAAgB,kBAAhB","sourcesContent":["import Vue from 'vue/dist/vue.esm'"]},"metadata":{},"sourceType":"module"}
