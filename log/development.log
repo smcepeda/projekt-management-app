@@ -5487,3 +5487,519 @@ Did you mean?  project
     35:             <li><%= link_to project.name, project %></li>
   
 app/views/teams/show.html.erb:32:in `_app_views_teams_show_html_erb__1870834103858370020_70202818724840'
+Started GET "/" for ::1 at 2020-05-27 22:48:01 +0200
+  
+Errno::EPERM (Operation not permitted - getcwd):
+  
+railties (5.2.4.2) lib/rails/paths.rb:196:in `chdir'
+railties (5.2.4.2) lib/rails/paths.rb:196:in `block in expanded'
+railties (5.2.4.2) lib/rails/paths.rb:163:in `each'
+railties (5.2.4.2) lib/rails/paths.rb:163:in `each'
+railties (5.2.4.2) lib/rails/paths.rb:192:in `expanded'
+railties (5.2.4.2) lib/rails/paths.rb:210:in `existent'
+activesupport (5.2.4.2) lib/active_support/i18n_railtie.rb:63:in `each'
+activesupport (5.2.4.2) lib/active_support/i18n_railtie.rb:63:in `flat_map'
+activesupport (5.2.4.2) lib/active_support/i18n_railtie.rb:63:in `block in initialize_i18n'
+activesupport (5.2.4.2) lib/active_support/evented_file_update_checker.rb:83:in `execute'
+activesupport (5.2.4.2) lib/active_support/evented_file_update_checker.rb:89:in `execute_if_updated'
+activesupport (5.2.4.2) lib/active_support/i18n_railtie.rb:70:in `block in initialize_i18n'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:426:in `instance_exec'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:606:in `block (2 levels) in default_terminator'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:605:in `catch'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:605:in `block in default_terminator'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:110:in `run!'
+activesupport (5.2.4.2) lib/active_support/reloader.rb:115:in `run!'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:72:in `block in run!'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:69:in `tap'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:69:in `run!'
+activesupport (5.2.4.2) lib/active_support/reloader.rb:64:in `run!'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2020-05-27 22:48:04 +0200
+  
+LoadError (cannot load such file -- /Users/Home/Desktop/Ruby Projects/projekt/config/routes.rb):
+  
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:55:in `load'
+bootsnap (1.4.6) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:55:in `load'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:285:in `block in load'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:257:in `load_dependency'
+activesupport (5.2.4.2) lib/active_support/dependencies.rb:285:in `load'
+railties (5.2.4.2) lib/rails/application/routes_reloader.rb:41:in `block in load_paths'
+railties (5.2.4.2) lib/rails/application/routes_reloader.rb:41:in `each'
+railties (5.2.4.2) lib/rails/application/routes_reloader.rb:41:in `load_paths'
+railties (5.2.4.2) lib/rails/application/routes_reloader.rb:20:in `reload!'
+railties (5.2.4.2) lib/rails/application/routes_reloader.rb:30:in `block in updater'
+activesupport (5.2.4.2) lib/active_support/file_update_checker.rb:83:in `execute'
+railties (5.2.4.2) lib/rails/application/routes_reloader.rb:10:in `execute'
+railties (5.2.4.2) lib/rails/application/finisher.rb:143:in `block (2 levels) in <module:Finisher>'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:426:in `instance_exec'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:606:in `block (2 levels) in default_terminator'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:605:in `catch'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:605:in `block in default_terminator'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:110:in `run!'
+activesupport (5.2.4.2) lib/active_support/reloader.rb:115:in `run!'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:72:in `block in run!'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:69:in `tap'
+activesupport (5.2.4.2) lib/active_support/execution_wrapper.rb:69:in `run!'
+activesupport (5.2.4.2) lib/active_support/reloader.rb:64:in `run!'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-27 22:48:39 +0200
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/Home/Desktop/Ruby Projects/projekt/db):
+  
+activerecord (5.2.4.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:17:in `sqlite3_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.4.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.4.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.4.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2020-05-27 22:48:40 +0200
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/Home/Desktop/Ruby Projects/projekt/db):
+  
+activerecord (5.2.4.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/sqlite3_adapter.rb:17:in `sqlite3_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.4.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.4.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.4.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-27 22:49:07 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (27.2ms)
+  Rendered home/index.html.erb within layouts/application (29.4ms)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-05-27 22:49:17 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (7.8ms)
+  Rendered home/index.html.erb within layouts/application (9.4ms)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-05-27 22:49:18 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (10.3ms)
+  Rendered home/index.html.erb within layouts/application (11.8ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/Home/Desktop/Ruby Projects/projekt-app/public/packs
+[Webpacker] Hash: d4824c34d4a3151243bc
+Version: webpack 4.43.0
+Time: 8002ms
+Built at: 2020-05-27 22:49:24
+                                     Asset        Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js    4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map     4.5 KiB  application  [emitted] [dev]        application
+      js/hello_vue-5d9bffa6b21c050e5e5c.js     266 KiB    hello_vue  [emitted] [immutable]  hello_vue
+  js/hello_vue-5d9bffa6b21c050e5e5c.js.map     312 KiB    hello_vue  [emitted] [dev]        hello_vue
+        js/projekt-3d9412de432c4fcc9dd5.js     365 KiB      projekt  [emitted] [immutable]  projekt
+    js/projekt-3d9412de432c4fcc9dd5.js.map     449 KiB      projekt  [emitted] [dev]        projekt
+                             manifest.json  1000 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint hello_vue = js/hello_vue-5d9bffa6b21c050e5e5c.js js/hello_vue-5d9bffa6b21c050e5e5c.js.map
+Entrypoint projekt = js/projekt-3d9412de432c4fcc9dd5.js js/projekt-3d9412de432c4fcc9dd5.js.map
+[0] got (ignored) 15 bytes {projekt} [built]
+[./app/javascript/app.vue] 1.18 KiB {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=script&lang=js&] 364 bytes {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] 746 bytes {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true&] 213 bytes {hello_vue} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/hello_vue.js] 1.89 KiB {hello_vue} [built]
+[./app/javascript/packs/projekt.js] 2.71 KiB {projekt} [built]
+[./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=script&lang=js&] ./node_modules/babel-loader/lib??ref--8-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js& 115 bytes {hello_vue} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] ./node_modules/css-loader/dist/cjs.js??ref--3-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--3-2!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css& 794 bytes {hello_vue} [built]
+[./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??ref--3-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--3-2!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css& 771 bytes {hello_vue} [built]
+[./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true&] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true& 288 bytes {hello_vue} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {hello_vue} {projekt} [built]
+    + 9 hidden modules
+
+Completed 200 OK in 16485ms (Views: 16455.7ms | ActiveRecord: 3.1ms)
+
+
+[Webpacker] Compiled all packs in /Users/Home/Desktop/Ruby Projects/projekt-app/public/packs
+[Webpacker] Hash: d4824c34d4a3151243bc
+Version: webpack 4.43.0
+Time: 3540ms
+Built at: 2020-05-27 22:49:24
+                                     Asset        Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js    4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map     4.5 KiB  application  [emitted] [dev]        application
+      js/hello_vue-5d9bffa6b21c050e5e5c.js     266 KiB    hello_vue  [emitted] [immutable]  hello_vue
+  js/hello_vue-5d9bffa6b21c050e5e5c.js.map     312 KiB    hello_vue  [emitted] [dev]        hello_vue
+        js/projekt-3d9412de432c4fcc9dd5.js     365 KiB      projekt  [emitted] [immutable]  projekt
+    js/projekt-3d9412de432c4fcc9dd5.js.map     449 KiB      projekt  [emitted] [dev]        projekt
+                             manifest.json  1000 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint hello_vue = js/hello_vue-5d9bffa6b21c050e5e5c.js js/hello_vue-5d9bffa6b21c050e5e5c.js.map
+Entrypoint projekt = js/projekt-3d9412de432c4fcc9dd5.js js/projekt-3d9412de432c4fcc9dd5.js.map
+[0] got (ignored) 15 bytes {projekt} [built]
+[./app/javascript/app.vue] 1.18 KiB {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=script&lang=js&] 364 bytes {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] 746 bytes {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true&] 213 bytes {hello_vue} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/hello_vue.js] 1.89 KiB {hello_vue} [built]
+[./app/javascript/packs/projekt.js] 2.71 KiB {projekt} [built]
+[./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=script&lang=js&] ./node_modules/babel-loader/lib??ref--8-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js& 115 bytes {hello_vue} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] ./node_modules/css-loader/dist/cjs.js??ref--3-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--3-2!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css& 794 bytes {hello_vue} [built]
+[./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??ref--3-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--3-2!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css& 771 bytes {hello_vue} [built]
+[./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true&] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true& 288 bytes {hello_vue} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {hello_vue} {projekt} [built]
+    + 9 hidden modules
+
+Completed 200 OK in 6348ms (Views: 6342.9ms | ActiveRecord: 1.9ms)
+
+
+[Webpacker] Compiled all packs in /Users/Home/Desktop/Ruby Projects/projekt-app/public/packs
+[Webpacker] Hash: d4824c34d4a3151243bc
+Version: webpack 4.43.0
+Time: 5658ms
+Built at: 2020-05-27 22:49:25
+                                     Asset        Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js    4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map     4.5 KiB  application  [emitted] [dev]        application
+      js/hello_vue-5d9bffa6b21c050e5e5c.js     266 KiB    hello_vue  [emitted] [immutable]  hello_vue
+  js/hello_vue-5d9bffa6b21c050e5e5c.js.map     312 KiB    hello_vue  [emitted] [dev]        hello_vue
+        js/projekt-3d9412de432c4fcc9dd5.js     365 KiB      projekt  [emitted] [immutable]  projekt
+    js/projekt-3d9412de432c4fcc9dd5.js.map     449 KiB      projekt  [emitted] [dev]        projekt
+                             manifest.json  1000 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint hello_vue = js/hello_vue-5d9bffa6b21c050e5e5c.js js/hello_vue-5d9bffa6b21c050e5e5c.js.map
+Entrypoint projekt = js/projekt-3d9412de432c4fcc9dd5.js js/projekt-3d9412de432c4fcc9dd5.js.map
+[0] got (ignored) 15 bytes {projekt} [built]
+[./app/javascript/app.vue] 1.18 KiB {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=script&lang=js&] 364 bytes {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] 746 bytes {hello_vue} [built]
+[./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true&] 213 bytes {hello_vue} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/hello_vue.js] 1.89 KiB {hello_vue} [built]
+[./app/javascript/packs/projekt.js] 2.71 KiB {projekt} [built]
+[./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=script&lang=js&] ./node_modules/babel-loader/lib??ref--8-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js& 115 bytes {hello_vue} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] ./node_modules/css-loader/dist/cjs.js??ref--3-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--3-2!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css& 794 bytes {hello_vue} [built]
+[./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css&] ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??ref--3-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--3-2!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css& 771 bytes {hello_vue} [built]
+[./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true&] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true& 288 bytes {hello_vue} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {hello_vue} {projekt} [built]
+    + 9 hidden modules
+
+Completed 200 OK in 8419ms (Views: 8413.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/teams/2" for ::1 at 2020-05-27 22:49:26 +0200
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:70
+  Rendering teams/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/teams/show.html.erb:10
+  Rendered teams/show.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `projects' for #<Team:0x00007fa488180f18>
+Did you mean?  project
+               project=):
+    29:         <p><%= @team.name %> projects</p>
+    30:         <h3 class="title is-4">Active Projects</h3>
+    31:         <hr/>
+    32:         <% if @team.projects.exists? %>
+    33:           <ul>
+    34:             <% @team.projects.each do |project|  %>
+    35:             <li><%= link_to project.name, project %></li>
+  
+app/views/teams/show.html.erb:32:in `_app_views_teams_show_html_erb__2095708454266712915_70172320783640'
+Started GET "/" for ::1 at 2020-05-27 22:49:28 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (5.6ms)
+  Rendered home/index.html.erb within layouts/application (6.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 58.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-27 22:49:30 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (56.7ms)
+  Rendered projects/new.html.erb within layouts/application (58.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 91.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-27 22:49:38 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ekV/n86LTWvwNwSOrYmmB9iufBX9Wg99GtLl0boNXVGwbH1Q5MtaY3940zQisS9NrW2r16II8FS2t6sOeNtDUA==", "project"=>{"name"=>"Thesis", "description"=>"Write my thesis", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (15.0ms)
+  Rendered projects/new.html.erb within layouts/application (18.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 141ms (Views: 97.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for ::1 at 2020-05-27 22:49:40 +0200
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at DESC[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (2.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-27 22:49:43 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (5.6ms)
+  Rendered home/index.html.erb within layouts/application (7.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-27 22:53:48 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (66.9ms)
+  Rendered projects/new.html.erb within layouts/application (74.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 213ms (Views: 167.6ms | ActiveRecord: 1.0ms)
+
+
