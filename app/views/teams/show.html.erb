@@ -1,51 +1,66 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-8">
-        <p>Team Name:</p>
-        <h1 class="title is-2"><%= @team.name %></h1>
-        <hr/>
-        <h2 class="subtitle"> Team Members</h2>
-          <div class="columns">
-          <% @team.users.each do |member|  %>
-            <div class="column is-4">
-              <div class="border-light border-radius-3 pa2">
-              <div class="columns">
-                <div class="column is-3">
-                <%= gravatar_image_tag(member.email.gsub('spam','mdeering'), size:48, alt: member.name, class:'image is-48x48') %>
-                </div>
-                <div class="column is-9">
-                  <h3 class="fw6 f4"><%= member.name %></h3>
-                  <p><%= member.email %></p>
-                  <p class="f6"><%= verbose_date(member.created_at) %></p>
-                </div>
-              </div>
-              </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projekt</title>
+    <%= csrf_meta_tags %>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag  'projekt' %>
+  </head>
+
+  <body>
+  	<% if flash[:notice] %>
+    	<div class="notification is-success global-notification">
+  	  	<p class="notice"><%= notice %></p>
+    	</div>
+   	<% end %>
+    <% if flash[:alert] %>
+    <div class="notification is-danger global-notification">
+      <p class="alert"><%= alert %></p>
+    </div>
+    <% end %>
+     <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class:"navbar-item" do %>
+          <h1 class="title is-5 has-text-white">Projekt</h1>
+        <% end  %>
+      <div class="navbar-burger burger" data-target="navbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+      <div id="navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <% if user_signed_in? %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to 'New', '#', class: "navbar-link" %>
+            <div class="navbar-dropdown">
+              <%= link_to 'Project', new_project_path, class:"navbar-item" %>
+              <%= link_to 'Team', new_team_path, class:"navbar-item" %>
             </div>
-            <% end %>
           </div>
-      </div>
-      <div class="column is-4 projects-column">
-        <p><%= @team.name %> projects</p>
-        <h3 class="title is-4">Active Projects</h3>
-        <hr/>
-        <% if @team.projects.exists? %>
-          <ul>
-            <% @team.projects.each do |project|  %>
-            <li><%= link_to project.name, project %></li>
-            <% end %>
-          </ul>
-        <% else %>
-        <div class="content">
-          <p>No active projects yet.</p>
-          <p><%= link_to 'Add one', new_project_path %></p>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+            <div class="navbar-dropdown is-right">
+              <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+            </div>
+          </div>
+         <% else %>
+          <%= link_to "Sign In", new_user_session_path, class:"navbar-item" %>
+          <%= link_to "Sign up", new_user_registration_path, class:"navbar-item"%>
+          <% end %>
+
         </div>
-        <% end %>
-      </div>
     </div>
-    <div class="utility-buttons">
-    <%= link_to 'Edit', edit_team_path(@team), class:'button' %>
-    <%= link_to 'Back', teams_path, class:'button' %>
-    </div>
-  </div>
-</section>
+  </nav>
+
+    <%= yield %>
+
+  </body>
+</html>

@@ -6003,3 +6003,1040 @@ Processing by ProjectsController#new as HTML
 Completed 200 OK in 213ms (Views: 167.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/projects/new" for ::1 at 2020-05-27 23:10:00 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (124.3ms)
+  Rendered projects/new.html.erb within layouts/application (144.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 379ms (Views: 332.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-27 23:10:11 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (30.1ms)
+  Rendered home/index.html.erb within layouts/application (32.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 132ms (Views: 121.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-27 23:10:13 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (16.7ms)
+  Rendered projects/new.html.erb within layouts/application (19.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 113ms (Views: 108.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-27 23:10:17 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iZeI1A8OSRa0c3btgFx4DUZOZfxMF4AuasMwFZqMJ4lDvoobJU5eHjs8oVcPZPFHM42yPhNFfwfGpn7KWFo5iA==", "project"=>{"name"=>"Thesis", "description"=>"x", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (2.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (44.8ms)
+  Rendered projects/new.html.erb within layouts/application (49.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 182ms (Views: 125.6ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-27 23:10:22 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bn2A0kF0FWulkGMBXXMyGWyMH8goJHcTfF/ELA074h0hqndMb/h/NJtCj9qqoNThWEi5kk/KSW2Lqz2wpnx1Hw==", "project"=>{"name"=>"Thesis", "description"=>"x", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (22.6ms)
+  Rendered projects/new.html.erb within layouts/application (24.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 87.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-27 23:10:26 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (9.8ms)
+  Rendered home/index.html.erb within layouts/application (11.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:07:33 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (56.4ms)
+  Rendered home/index.html.erb within layouts/application (75.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2636ms (Views: 2575.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:07:39 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (59.8ms)
+  Rendered projects/new.html.erb within layouts/application (63.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 152.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:07:46 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W7k8eRCdO7hp3SkS4wt3sXsatIMq2/2ER5kwbAYby32RkD62Ot0ssOaS/qhsM/77DtljQXWJAq3r/H6zxM3VfA==", "project"=>{"name"=>"Thesis", "description"=>"Santiago Cepeda", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (32.0ms)
+  Rendered projects/new.html.erb within layouts/application (36.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 205ms (Views: 163.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:07:50 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (21.1ms)
+  Rendered home/index.html.erb within layouts/application (23.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 158ms (Views: 149.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/teams/new" for ::1 at 2020-05-28 11:07:52 +0200
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:18
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (9.3ms)
+  Rendered teams/new.html.erb within layouts/application (20.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 182ms (Views: 165.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:08:39 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (10.1ms)
+  Rendered home/index.html.erb within layouts/application (12.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 152.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:08:40 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (38.5ms)
+  Rendered projects/new.html.erb within layouts/application (40.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 187ms (Views: 177.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:08:43 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (17.0ms)
+  Rendered projects/new.html.erb within layouts/application (18.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 102ms (Views: 98.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:10:26 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (28.0ms)
+  Rendered projects/new.html.erb within layouts/application (35.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 162ms (Views: 140.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:10:28 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (9.3ms)
+  Rendered projects/new.html.erb within layouts/application (11.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 79.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:13:07 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (27.5ms)
+  Rendered projects/new.html.erb within layouts/application (30.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 275ms (Views: 270.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:14:51 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (34.7ms)
+  Rendered projects/new.html.erb within layouts/application (38.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 304ms (Views: 281.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:16:00 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (32.6ms)
+  Rendered projects/new.html.erb within layouts/application (34.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 390ms (Views: 386.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:16:06 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l3ztSwOUd+DOceTxm7I6ANC6zo9oAiYYu1UQ2kfgjOqwqxrVLRgdv/CjCCpsYdz45H5o1Q/sGGZMoelG7Kcb6A==", "project"=>{"name"=>"Thesis", "description"=>"X", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (6.2ms)
+  Rendered projects/new.html.erb within layouts/application (8.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 65.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for ::1 at 2020-05-28 11:16:12 +0200
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY created_at DESC[0m
+  ↳ app/views/projects/index.html.erb:15
+  Rendered projects/index.html.erb within layouts/application (7.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 80ms (Views: 74.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:16:17 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (6.8ms)
+  Rendered home/index.html.erb within layouts/application (9.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 72.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:17:11 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (10.6ms)
+  Rendered home/index.html.erb within layouts/application (11.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 80.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:17:13 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (14.0ms)
+  Rendered projects/new.html.erb within layouts/application (15.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 102.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:17:22 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lDC1jQJtoWrHaA97hptvKKKoWZWTG8GdIXDv6XRLHcFeGbdCKC22Ykgn2MEJo+Zi12uOV8xJPrSNFaE2tp0DwA==", "project"=>{"name"=>"Thesis", "description"=>"X", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (9.6ms)
+  Rendered projects/new.html.erb within layouts/application (10.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 111.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:17:44 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4MJ74I/wWDtoILincGZVHjfY4oRFuPjMs/VrAtKIzRfHFYx+oXwyZFbyVHyHtbPmAxxE3iJWxrJEAZKeec9aFQ==", "project"=>{"name"=>"Thesis", "description"=>"X", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (14.7ms)
+  Rendered projects/new.html.erb within layouts/application (16.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 180ms (Views: 175.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:17:57 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HFs9mP8/faK8gqM3weWwQ8wjm3FVBgYGNJrosbYKgJQ7jMoG0bMX/YJQT+w2Nla7+Oc9KzLoOHjDbhEtHU0Xlg==", "project"=>{"name"=>"Thesis", "description"=>"X", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (5.9ms)
+  Rendered projects/new.html.erb within layouts/application (6.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 179ms (Views: 173.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:18:04 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p06P/iL7/KBygEH6E8DtzuVft3o2u6maU5hUKjsT0VuAmXhgDHeW/0xSrSHkEws20ZsRIFFVl+SkbK22kFRGWQ==", "project"=>{"name"=>"Thesis", "description"=>"X", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (6.3ms)
+  Rendered projects/new.html.erb within layouts/application (8.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 77.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:18:08 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (5.2ms)
+  Rendered home/index.html.erb within layouts/application (6.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 66.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/teams/2" for ::1 at 2020-05-28 11:18:10 +0200
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:70
+  Rendering teams/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/teams/show.html.erb:10
+  Rendered teams/show.html.erb within layouts/application (42.4ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `projects' for #<Team:0x00007fa4859ed0c8>
+Did you mean?  project
+               project=):
+    29:         <p><%= @team.name %> projects</p>
+    30:         <h3 class="title is-4">Active Projects</h3>
+    31:         <hr/>
+    32:         <% if @team.projects.exists? %>
+    33:           <ul>
+    34:             <% @team.projects.each do |project|  %>
+    35:             <li><%= link_to project.name, project %></li>
+  
+app/views/teams/show.html.erb:32:in `_app_views_teams_show_html_erb__2095708454266712915_70172296609560'
+Started GET "/" for ::1 at 2020-05-28 11:18:35 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (7.0ms)
+  Rendered home/index.html.erb within layouts/application (8.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 114.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:19:00 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (6.6ms)
+  Rendered home/index.html.erb within layouts/application (7.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 201ms (Views: 195.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:19:02 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (22.9ms)
+  Rendered projects/new.html.erb within layouts/application (27.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 127.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:19:07 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kg5UpJ26dxm65ospachggOyyx4pzEmyrSofy5AeyQLzgJ1Zrt/pgETWpXJPm8OnKmXEQSCxAk4Lm4rw7xWRevQ==", "project"=>{"name"=>"Thesis", "description"=>"xxx", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (7.7ms)
+  Rendered projects/new.html.erb within layouts/application (10.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 70.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:19:17 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZVz30Gzt0LCvbMUKljW4t4xr3ZjqPWaeIX7NB22sjztCiwBOQmG675G+KdFh5l5PuK97wo3TWODWijSbxusYOQ==", "project"=>{"name"=>"Thesis", "description"=>"xxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdf", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (6.0ms)
+  Rendered projects/new.html.erb within layouts/application (7.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 73.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:19:21 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U/Bl1TkJgbXDu+csPfXb+cdDLj89imPLTLKr/NIXjId0J5JLF4Xr6v1pC/fKJj0B84eIZVpkXbW7RlJgeVAbhQ==", "project"=>{"name"=>"Thesis", "description"=>"xxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdfxxxasdfasdfasdfasdf", "team_id"=>"3"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (10.1ms)
+  Rendered projects/new.html.erb within layouts/application (11.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 71.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:19:24 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (11.7ms)
+  Rendered home/index.html.erb within layouts/application (14.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 81.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:19:25 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (8.6ms)
+  Rendered home/index.html.erb within layouts/application (10.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 72.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teams/new" for ::1 at 2020-05-28 11:19:29 +0200
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:18
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (2.1ms)
+  Rendered teams/new.html.erb within layouts/application (6.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:19:32 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:23
+  Rendered projects/_form.html.erb (95.6ms)
+  Rendered projects/new.html.erb within layouts/application (103.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 163ms (Views: 158.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:20:31 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (20.9ms)
+  Rendered projects/new.html.erb within layouts/application (25.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 177ms (Views: 159.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:20:38 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GGAm17BWm4tEPqX9LPJJ1T4Fy/It9P8mOPHLk2UXu9Y/t9FJntrx1HrsSSbbIa8tCsFtqEoawVjPBTIPzlAs1A==", "project"=>{"name"=>"Thesis", "description"=>"aasdfasdfasdfasdfadf", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (22.5ms)
+  Rendered projects/new.html.erb within layouts/application (24.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 109.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:20:40 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (7.7ms)
+  Rendered home/index.html.erb within layouts/application (10.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 71.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:20:42 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (13.7ms)
+  Rendered projects/new.html.erb within layouts/application (17.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 84.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:23:35 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (22.4ms)
+  Rendered home/index.html.erb within layouts/application (25.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 213ms (Views: 152.4ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:23:38 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (28.0ms)
+  Rendered projects/new.html.erb within layouts/application (31.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 330ms (Views: 294.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:23:42 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E2EStF5ZAz3iMMPTlQEbtD0PdnhvkmKmwsBu5GS10NjZSBB7dBkUNW1/FGkaOZL+SMyhujDAnY9upSA7pmPO2Q==", "project"=>{"name"=>"Thesis", "description"=>"asdfasdfasdfasdf", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mProject Create (3.3ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "created_at", "updated_at", "user_id", "team_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Thesis"], ["description", "asdfasdfasdfasdf"], ["created_at", "2020-05-28 09:23:42.877199"], ["updated_at", "2020-05-28 09:23:42.877199"], ["user_id", 5], ["team_id", 2]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 34ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/projects/1" for ::1 at 2020-05-28 11:23:42 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (9.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 157ms (Views: 151.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:23:46 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (28.9ms)
+  Rendered home/index.html.erb within layouts/application (32.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 134ms (Views: 123.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:23:54 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (23.0ms)
+  Rendered projects/new.html.erb within layouts/application (26.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 125.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:23:56 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (27.4ms)
+  Rendered home/index.html.erb within layouts/application (31.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 152ms (Views: 141.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/projects/1" for ::1 at 2020-05-28 11:23:57 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (6.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 131ms (Views: 126.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/projects/1" for ::1 at 2020-05-28 11:23:59 +0200
+Processing by ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0lZO2HlHFgz5v0USoyNgmYKzZ76UawY/+smc5RK2bxX1gblGV8t8U8dtqclU8IZhtnfB5POFOEENPWV5ufH4Fw==", "id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:60
+  [1m[36mProject Destroy (0.7ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/projects_controller.rb:60
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:60
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:23:59 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (5.3ms)
+  Rendered home/index.html.erb within layouts/application (6.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 126.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-28 11:24:01 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (14.9ms)
+  Rendered projects/new.html.erb within layouts/application (18.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 88.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-28 11:24:13 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PNwjaxdgF4sU1dYpcfN8BMsJq7Lk0FiElUeQ6YgSRxj29SGkPSAAg5uaAZP+y/VOvsp8cLuCp605It42SsRZGQ==", "project"=>{"name"=>"SpaceX Launch", "description"=>"We are going to launch today", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mProject Create (1.2ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "created_at", "updated_at", "user_id", "team_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "SpaceX Launch"], ["description", "We are going to launch today"], ["created_at", "2020-05-28 09:24:13.150941"], ["updated_at", "2020-05-28 09:24:13.150941"], ["user_id", 5], ["team_id", 2]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+Redirected to http://localhost:3000/projects/2
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/projects/2" for ::1 at 2020-05-28 11:24:13 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (6.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 176ms (Views: 171.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-28 11:24:17 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (21.5ms)
+  Rendered home/index.html.erb within layouts/application (24.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 103.9ms | ActiveRecord: 3.8ms)
+
+
