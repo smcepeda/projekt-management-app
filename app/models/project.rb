@@ -4,3 +4,4 @@ class Project < ApplicationRecord
 
     accepts_nested_attributes_for :team
 end
+ 

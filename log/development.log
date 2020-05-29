@@ -7040,3 +7040,2249 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 110ms (Views: 103.9ms | ActiveRecord: 3.8ms)
 
 
+Started GET "/projects/new" for ::1 at 2020-05-29 12:35:02 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (38.0ms)
+  Rendered projects/new.html.erb within layouts/application (42.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 289ms (Views: 212.2ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-29 12:35:09 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BoZPosGeE3jO6eCEpSvOoLyRU8TB6HTrU2UkIKpW937Mr01t694EcEGmNz4qE0fqyVKEBp66i8L/AGr/aIDpfw==", "project"=>{"name"=>"Tesla", "description"=>"XXXX", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mProject Create (0.7ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "created_at", "updated_at", "user_id", "team_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Tesla"], ["description", "XXXX"], ["created_at", "2020-05-29 10:35:09.238513"], ["updated_at", "2020-05-29 10:35:09.238513"], ["user_id", 5], ["team_id", 2]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+Redirected to http://localhost:3000/projects/3
+Completed 302 Found in 25ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/projects/3" for ::1 at 2020-05-29 12:35:09 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (6.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 140ms (Views: 134.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 12:35:11 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  Rendered home/_dashboard.html.erb (15.9ms)
+  Rendered home/index.html.erb within layouts/application (19.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 145ms (Views: 140.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:03:11 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'activities'):
+  
+app/controllers/home_controller.rb:9:in `index'
+Started GET "/" for ::1 at 2020-05-29 13:03:49 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-29 13:03:50 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-29 13:04:00 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-29 13:04:01 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-29 13:04:02 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-29 13:04:02 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-29 13:04:03 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+webpacker (5.1.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateActivities (20200529110345)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:7
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "trackable_type" varchar, "trackable_id" integer, "owner_type" varchar, "owner_id" integer, "key" varchar, "parameters" text, "recipient_type" varchar, "recipient_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_activities_on_trackable_type_and_trackable_id" ON "activities" ("trackable_type", "trackable_id")[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_activities_on_owner_type_and_owner_id" ON "activities" ("owner_type", "owner_id")[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_activities_on_recipient_type_and_recipient_id" ON "activities" ("recipient_type", "recipient_id")[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_activities_on_trackable_id_and_trackable_type" ON "activities" ("trackable_id", "trackable_type")[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_activities_on_owner_id_and_owner_type" ON "activities" ("owner_id", "owner_type")[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:18
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_activities_on_recipient_id_and_recipient_type" ON "activities" ("recipient_id", "recipient_type")[0m
+  ↳ db/migrate/20200529110345_create_activities.rb:19
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200529110345"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-05-29 13:04:22 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (45.1ms)
+  Rendered home/index.html.erb within layouts/application (47.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2342ms (Views: 2275.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:05:40 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (12.0ms)
+  Rendered home/index.html.erb within layouts/application (13.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 80.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-29 13:05:47 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (107.6ms)
+  Rendered projects/new.html.erb within layouts/application (110.2ms)
+Started GET "/projects/new" for ::1 at 2020-05-29 13:05:47 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (17.4ms)
+  Rendered projects/new.html.erb within layouts/application (19.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 597ms (Views: 476.8ms | ActiveRecord: 1.1ms)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 309ms (Views: 303.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-29 13:05:56 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"loxNGXFRbUyJQKdSAbnvffVbjK9jmCqHRrJXyzon+PlcpU/WWxF6RAYPcOiOgWY3gJhbbTzK1a7q1xkU+PHm+A==", "project"=>{"name"=>"Santi's project", "description"=>"XXXX", "team_id"=>"2"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mProject Create (1.8ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "created_at", "updated_at", "user_id", "team_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Santi's project"], ["description", "XXXX"], ["created_at", "2020-05-29 11:05:56.197979"], ["updated_at", "2020-05-29 11:05:56.197979"], ["user_id", 5], ["team_id", 2]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+Redirected to http://localhost:3000/projects/4
+Completed 302 Found in 17ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/projects/4" for ::1 at 2020-05-29 13:05:56 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (8.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 199ms (Views: 194.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:05:58 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 2)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 2]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (16.1ms)
+  Rendered home/index.html.erb within layouts/application (19.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 104.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/teams/new" for ::1 at 2020-05-29 13:06:15 +0200
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:18
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (0.8ms)
+  Rendered teams/new.html.erb within layouts/application (4.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 77.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/teams" for ::1 at 2020-05-29 13:06:31 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Awesome team", "updated_at"=>nil, "user_id"=>5, "users_attributes"=>[{"id"=>nil, "name"=>"smcepeda@gmail.com", "email"=>"sasdfa", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sasdfa"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.5ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Awesome team"], ["created_at", "2020-05-29 11:06:31.118413"], ["updated_at", "2020-05-29 11:06:31.118413"], ["user_id", 5]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "sasdfa"], ["confirmation_token", "AAyF7ed4zmSmHzV-95q3"], ["confirmation_sent_at", "2020-05-29 11:06:31.119859"], ["created_at", "2020-05-29 11:06:31.119730"], ["updated_at", "2020-05-29 11:06:31.119730"], ["name", "smcepeda@gmail.com"], ["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "team_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["team_id", 3], ["updated_at", "2020-05-29 11:06:31.120797"], ["id", 5]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mPublicActivity::Activity Create (1.3ms)[0m  [1m[32mINSERT INTO "activities" ("trackable_type", "trackable_id", "owner_type", "owner_id", "key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["trackable_type", "Team"], ["trackable_id", 3], ["owner_type", "User"], ["owner_id", 5], ["key", "team.create"], ["created_at", "2020-05-29 11:06:31.132948"], ["updated_at", "2020-05-29 11:06:31.132948"]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 41.0ms
+Sent mail to sasdfa (396.3ms)
+Date: Fri, 29 May 2020 13:06:31 +0200
+From: no-reply@projekt.com
+Reply-To: no-reply@projekt.com
+To: sasdfa
+Message-ID: <5ed0ecb7480aa_225b3fd86f8f278099767@Santiagos-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome sasdfa!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=AAyF7ed4zmSmHzV-95q3">Confirm my account</a></p>
+
+  Rendering teams/show.json.jbuilder
+  Rendered teams/_team.json.jbuilder (0.5ms)
+  Rendered teams/show.json.jbuilder (2.1ms)
+Completed 201 Created in 588ms (Views: 5.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/teams/3" for ::1 at 2020-05-29 13:06:31 +0200
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:70
+  Rendering teams/show.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/teams/show.html.erb:39
+  Rendered teams/show.html.erb within layouts/application (108.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 136ms (Views: 133.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:06:35 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (12.1ms)
+  Rendered home/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial public_activity/team/_create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Home/Desktop/Ruby Projects/projekt-app/app/views"
+  * "/Users/Home/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    59: 			<h3 class="subtitle is-5">Activity</h3>
+    60: 			<hr />
+    61: 			<ul class="list">
+    62: 				<%= render_activities(@activities) %>
+    63: 			</ul>
+    64: 		</div>
+    65: 	
+  
+app/views/home/_dashboard.html.erb:62:in `_app_views_home__dashboard_html_erb___1986763958685292514_70198833456280'
+app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___3051511128723131812_70198833441760'
+Started GET "/" for ::1 at 2020-05-29 13:07:33 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (18.8ms)
+  Rendered home/index.html.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial public_activity/team/_create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Home/Desktop/Ruby Projects/projekt-app/app/views"
+  * "/Users/Home/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    59: 			<h3 class="subtitle is-5">Activity</h3>
+    60: 			<hr />
+    61: 			<ul class="list">
+    62: 				<%= render_activities(@activities) %>
+    63: 			</ul>
+    64: 		</div>
+    65: 	
+  
+app/views/home/_dashboard.html.erb:62:in `_app_views_home__dashboard_html_erb___1986763958685292514_70198793297640'
+app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___3051511128723131812_70198833722300'
+Started GET "/" for ::1 at 2020-05-29 13:07:35 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (7.8ms)
+  Rendered home/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial public_activity/team/_create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Home/Desktop/Ruby Projects/projekt-app/app/views"
+  * "/Users/Home/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    59: 			<h3 class="subtitle is-5">Activity</h3>
+    60: 			<hr />
+    61: 			<ul class="list">
+    62: 				<%= render_activities(@activities) %>
+    63: 			</ul>
+    64: 		</div>
+    65: 	
+  
+app/views/home/_dashboard.html.erb:62:in `_app_views_home__dashboard_html_erb___1986763958685292514_70198845528400'
+app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___3051511128723131812_70198793226060'
+Started GET "/" for ::1 at 2020-05-29 13:08:15 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (8.8ms)
+  Rendered home/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial public_activity/team/_create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Home/Desktop/Ruby Projects/projekt-app/app/views"
+  * "/Users/Home/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    59: 			<h3 class="subtitle is-5">Activity</h3>
+    60: 			<hr />
+    61: 			<ul class="list">
+    62: <%= render_activities(@activities) %>			</ul>
+    63: 		</div>
+    64: 	
+    65: 	</div>
+  
+app/views/home/_dashboard.html.erb:62:in `_app_views_home__dashboard_html_erb___1986763958685292514_70198833518800'
+app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___3051511128723131812_70198841789260'
+Started GET "/" for ::1 at 2020-05-29 13:08:17 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (8.5ms)
+  Rendered home/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial public_activity/team/_create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Home/Desktop/Ruby Projects/projekt-app/app/views"
+  * "/Users/Home/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views"
+):
+    59: 			<h3 class="subtitle is-5">Activity</h3>
+    60: 			<hr />
+    61: 			<ul class="list">
+    62: <%= render_activities(@activities) %>			</ul>
+    63: 		</div>
+    64: 	
+    65: 	</div>
+  
+app/views/home/_dashboard.html.erb:62:in `_app_views_home__dashboard_html_erb___1986763958685292514_70198798788340'
+app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___3051511128723131812_70198793214800'
+Started GET "/" for ::1 at 2020-05-29 13:08:57 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (6.3ms)
+  Rendered home/_dashboard.html.erb (33.4ms)
+  Rendered home/index.html.erb within layouts/application (37.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 246ms (Views: 216.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:01 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (1.3ms)
+  Rendered home/_dashboard.html.erb (6.6ms)
+  Rendered home/index.html.erb within layouts/application (7.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:03 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (3.2ms)
+  Rendered home/_dashboard.html.erb (18.2ms)
+  Rendered home/index.html.erb within layouts/application (19.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 78.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:03 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (3.1ms)
+  Rendered home/_dashboard.html.erb (17.0ms)
+  Rendered home/index.html.erb within layouts/application (19.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 113ms (Views: 108.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:04 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (3.3ms)
+  Rendered home/_dashboard.html.erb (14.8ms)
+  Rendered home/index.html.erb within layouts/application (15.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 85.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:04 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 3)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 3]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 5], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (2.2ms)
+  Rendered home/_dashboard.html.erb (14.2ms)
+  Rendered home/index.html.erb within layouts/application (17.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 108.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/teams/3" for ::1 at 2020-05-29 13:09:05 +0200
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:70
+  Rendering teams/show.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/teams/show.html.erb:39
+  Rendered teams/show.html.erb within layouts/application (88.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 109.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2020-05-29 13:09:07 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (23.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 89.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2020-05-29 13:09:08 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (14.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 104.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-29 13:09:09 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BJ0Kfas54d0KUp5YOjlkXs/fGH2t5IG/hLD3j0yL1C0jSv3jhbWLgjSAcoPN6oKm+xu+J8oKv8FzRA4T58xDLw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:09 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (0.7ms)
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:11 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-29 13:09:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 93.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-29 13:09:19 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0+LIVx/1NBZUZnKX02IhU0PyxXazZsaZPf6Q4DH9IU8vqUgXWll5lHLdQwqxZxBTKAdSww8VKJBj+5RyCGYJyg==", "user"=>{"email"=>"smcepeda@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "smcepeda@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 38ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0+LIVx/1NBZUZnKX02IhU0PyxXazZsaZPf6Q4DH9IU8vqUgXWll5lHLdQwqxZxBTKAdSww8VKJBj+5RyCGYJyg==", "user"=>{"email"=>"smcepeda@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 183ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:22 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (0.9ms)
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-05-29 13:09:24 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (11.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 145.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-29 13:09:27 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aVbmBoLe7/v2BimU+HojoM6IPltED041wpW3X6x8a4D4i45i2qJzT/Qy3rFGt3tAJ89oh6fcZQkrsSF/EdGtDw==", "user"=>{"name"=>"Santiago Cepeda", "email"=>"smcepeda@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "smcepeda@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 82.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2020-05-29 13:09:38 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N5pMWBSKUIWTaEHdleX35mJdxWy+eQA59ihySiKGQC6ujAH3cQEJu71DH2cytDvBjA+/X3KBaTg6R2mwOe+koQ==", "user"=>{"name"=>"Elon musk", "email"=>"elon@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "kc7HnJpvNXgsyp6QieMr"], ["confirmation_sent_at", "2020-05-29 11:09:38.654284"], ["created_at", "2020-05-29 11:09:38.654082"], ["updated_at", "2020-05-29 11:09:38.654082"], ["name", "Elon musk"]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 6.3ms
+Sent mail to elon@gmail.com (103.5ms)
+Date: Fri, 29 May 2020 13:09:38 +0200
+From: no-reply@projekt.com
+Reply-To: no-reply@projekt.com
+To: elon@gmail.com
+Message-ID: <5ed0ed72a5976_225b3fd86f8f2780998a9@Santiagos-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome elon@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=kc7HnJpvNXgsyp6QieMr">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 132ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:09:38 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (0.3ms)
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=kc7HnJpvNXgsyp6QieMr" for ::1 at 2020-05-29 13:09:56 +0200
+Processing by ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"kc7HnJpvNXgsyp6QieMr"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "kc7HnJpvNXgsyp6QieMr"], ["LIMIT", 1]]
+  ↳ app/controllers/confirmations_controller.rb:49
+  Rendering devise/confirmations/show.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_confirmations_show_html_erb__1753196250089563090_70198798885760 at /Users/Home/Desktop/Ruby Projects/projekt-app/app/views/devise/confirmations/show.html.erb:5)
+  Rendered devise/confirmations/show.html.erb within layouts/application (7.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 188ms (Views: 173.7ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/user/confirmation" for ::1 at 2020-05-29 13:10:01 +0200
+Processing by ConfirmationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1KeCqSPdFarSXTDDQskMUXzbtaDgpmW9hmB/Ri5RCXhNsc8GRlZMlPx2bnnlmMB2konPkyxeDLxKD2S8NTjt9w==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "confirmation_token"=>"kc7HnJpvNXgsyp6QieMr", "commit"=>"Activate"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "kc7HnJpvNXgsyp6QieMr"], ["LIMIT", 1]]
+  ↳ app/controllers/confirmations_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/models/user.rb:17
+  Rendering devise/confirmations/show.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_confirmations_show_html_erb__1753196250089563090_70198790902880 at /Users/Home/Desktop/Ruby Projects/projekt-app/app/views/devise/confirmations/show.html.erb:5)
+  Rendered /Users/Home/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/confirmations/show.html.erb within layouts/application (5.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 202ms (Views: 72.7ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/user/confirmation" for ::1 at 2020-05-29 13:10:07 +0200
+Processing by ConfirmationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l2+U6O0QKQw9VpBUT5NisdGT1hZNgySkfUGjwRNJL0sOedlHiJtwMhN9zu7owq6WP8GsJYF7TaWxLrg7CCDLxA==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "confirmation_token"=>"kc7HnJpvNXgsyp6QieMr", "commit"=>"Activate"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "kc7HnJpvNXgsyp6QieMr"], ["LIMIT", 1]]
+  ↳ app/controllers/confirmations_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:17
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$11$1duz47afu1uCTaX/lkFd/uevIVr9I45LXuF1XkF5pgRy5wl9d.zVu"], ["updated_at", "2020-05-29 11:10:07.910301"], ["id", 9]]
+  ↳ app/models/user.rb:17
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/confirmations_controller.rb:63
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2020-05-29 11:10:07.923537"], ["updated_at", "2020-05-29 11:10:07.924150"], ["id", 9]]
+  ↳ app/controllers/confirmations_controller.rb:63
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/confirmations_controller.rb:63
+Redirected to http://localhost:3000/
+Completed 302 Found in 135ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:10:07 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[36mPublicActivity::Activity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (7.4ms)
+  Rendered home/index.html.erb within layouts/application (10.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 71.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/teams/new" for ::1 at 2020-05-29 13:10:10 +0200
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:18
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (0.6ms)
+  Rendered teams/new.html.erb within layouts/application (3.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 61.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/teams" for ::1 at 2020-05-29 13:10:23 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon Musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"Elon", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.5ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon Musk"], ["created_at", "2020-05-29 11:10:23.725212"], ["updated_at", "2020-05-29 11:10:23.725212"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "JNViZziD-sFSS8MzWE6G"], ["confirmation_sent_at", "2020-05-29 11:10:23.727796"], ["created_at", "2020-05-29 11:10:23.727646"], ["updated_at", "2020-05-29 11:10:23.727646"], ["name", "Elon"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:26 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon Musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"Elon", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon Musk"], ["created_at", "2020-05-29 11:10:26.182197"], ["updated_at", "2020-05-29 11:10:26.182197"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "Snd7fWxLBLvV2WsFhkYN"], ["confirmation_sent_at", "2020-05-29 11:10:26.183394"], ["created_at", "2020-05-29 11:10:26.183292"], ["updated_at", "2020-05-29 11:10:26.183292"], ["name", "Elon"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started GET "/" for ::1 at 2020-05-29 13:10:28 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (6.6ms)
+  Rendered home/index.html.erb within layouts/application (8.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 86.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/teams/new" for ::1 at 2020-05-29 13:10:30 +0200
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:18
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (0.7ms)
+  Rendered teams/new.html.erb within layouts/application (2.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 73.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/teams" for ::1 at 2020-05-29 13:10:41 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:41.913999"], ["updated_at", "2020-05-29 11:10:41.913999"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "rCpiagNaXza_KsBSg8eQ"], ["confirmation_sent_at", "2020-05-29 11:10:41.915140"], ["created_at", "2020-05-29 11:10:41.915046"], ["updated_at", "2020-05-29 11:10:41.915046"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (1.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:44 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:44.085718"], ["updated_at", "2020-05-29 11:10:44.085718"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "RxkQrhryQYemrczEdbrV"], ["confirmation_sent_at", "2020-05-29 11:10:44.086796"], ["created_at", "2020-05-29 11:10:44.086701"], ["updated_at", "2020-05-29 11:10:44.086701"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:44 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:44.861648"], ["updated_at", "2020-05-29 11:10:44.861648"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "ceg3qoBywomD2bxZHsAf"], ["confirmation_sent_at", "2020-05-29 11:10:44.862680"], ["created_at", "2020-05-29 11:10:44.862585"], ["updated_at", "2020-05-29 11:10:44.862585"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:45 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.4ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:45.399868"], ["updated_at", "2020-05-29 11:10:45.399868"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "Sv2yD6fxkNRmNxMdiEZ6"], ["confirmation_sent_at", "2020-05-29 11:10:45.401160"], ["created_at", "2020-05-29 11:10:45.401060"], ["updated_at", "2020-05-29 11:10:45.401060"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:45 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:45.859341"], ["updated_at", "2020-05-29 11:10:45.859341"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "9kA4SF_s61oQh4REyqRx"], ["confirmation_sent_at", "2020-05-29 11:10:45.860430"], ["created_at", "2020-05-29 11:10:45.860338"], ["updated_at", "2020-05-29 11:10:45.860338"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:46 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:46.330124"], ["updated_at", "2020-05-29 11:10:46.330124"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "BypfY7ysbcTxjzDeEam8"], ["confirmation_sent_at", "2020-05-29 11:10:46.331546"], ["created_at", "2020-05-29 11:10:46.331399"], ["updated_at", "2020-05-29 11:10:46.331399"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:10:46 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"elon@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "elon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:10:46.794084"], ["updated_at", "2020-05-29 11:10:46.794084"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "elon@gmail.com"], ["confirmation_token", "L9hRd78zoE9_Ask4DKUy"], ["confirmation_sent_at", "2020-05-29 11:10:46.795154"], ["created_at", "2020-05-29 11:10:46.795058"], ["updated_at", "2020-05-29 11:10:46.795058"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (1.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::RecordNotUnique (SQLite3::ConstraintException: UNIQUE constraint failed: users.email: INSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)):
+  
+app/controllers/teams_controller.rb:33:in `block in create'
+app/controllers/teams_controller.rb:32:in `create'
+Started POST "/teams" for ::1 at 2020-05-29 13:11:00 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon musk", "updated_at"=>nil, "user_id"=>9, "users_attributes"=>[{"id"=>nil, "name"=>"elon musk", "email"=>"peter@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peter@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (0.4ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon musk"], ["created_at", "2020-05-29 11:11:00.186930"], ["updated_at", "2020-05-29 11:11:00.186930"], ["user_id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "peter@gmail.com"], ["confirmation_token", "u-1hLqDGFqhZQkQyVXNU"], ["confirmation_sent_at", "2020-05-29 11:11:00.188571"], ["created_at", "2020-05-29 11:11:00.188477"], ["updated_at", "2020-05-29 11:11:00.188477"], ["name", "elon musk"], ["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "team_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["team_id", 4], ["updated_at", "2020-05-29 11:11:00.189717"], ["id", 9]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mPublicActivity::Activity Create (3.2ms)[0m  [1m[32mINSERT INTO "activities" ("trackable_type", "trackable_id", "owner_type", "owner_id", "key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["trackable_type", "Team"], ["trackable_id", 4], ["owner_type", "User"], ["owner_id", 9], ["key", "team.create"], ["created_at", "2020-05-29 11:11:00.192147"], ["updated_at", "2020-05-29 11:11:00.192147"]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 8.3ms
+Sent mail to peter@gmail.com (24.4ms)
+Date: Fri, 29 May 2020 13:11:00 +0200
+From: no-reply@projekt.com
+Reply-To: no-reply@projekt.com
+To: peter@gmail.com
+Message-ID: <5ed0edc433235_225b3fd86f8f25509998f@Santiagos-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome peter@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=u-1hLqDGFqhZQkQyVXNU">Confirm my account</a></p>
+
+  Rendering teams/show.json.jbuilder
+  Rendered teams/_team.json.jbuilder (2.5ms)
+  Rendered teams/show.json.jbuilder (3.8ms)
+Completed 201 Created in 60ms (Views: 6.8ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/teams/4" for ::1 at 2020-05-29 13:11:00 +0200
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:70
+  Rendering teams/show.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/teams/show.html.erb:39
+  Rendered teams/show.html.erb within layouts/application (110.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 140ms (Views: 137.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:11:02 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (2.1ms)
+  Rendered home/_dashboard.html.erb (12.6ms)
+  Rendered home/index.html.erb within layouts/application (14.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 73.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-29 13:11:05 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (7.7ms)
+  Rendered projects/new.html.erb within layouts/application (9.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 99ms (Views: 86.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-29 13:11:16 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s1N7HgKUdUHtTzu0sOOEG+4K+pv+XqIy+cpOGFsEY5MNI8cuTssFiSnjC3nOt/eUDDJbbgLTbRg9on0DJcSzsw==", "project"=>{"name"=>"SpaceX Launch", "description"=>"Space X", "team_id"=>"4"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mProject Create (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "created_at", "updated_at", "user_id", "team_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "SpaceX Launch"], ["description", "Space X"], ["created_at", "2020-05-29 11:11:16.815950"], ["updated_at", "2020-05-29 11:11:16.815950"], ["user_id", 9], ["team_id", 4]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+Redirected to http://localhost:3000/projects/5
+Completed 302 Found in 11ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/5" for ::1 at 2020-05-29 13:11:16 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (2.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 63ms (Views: 59.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:11:19 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (1.8ms)
+  Rendered home/_dashboard.html.erb (14.9ms)
+  Rendered home/index.html.erb within layouts/application (17.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 73.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:11:21 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (1.7ms)
+  Rendered home/_dashboard.html.erb (8.9ms)
+  Rendered home/index.html.erb within layouts/application (10.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 80.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:11:23 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:6
+  Rendered public_activity/team/_create.html.erb (1.0ms)
+  Rendered home/_dashboard.html.erb (8.4ms)
+  Rendered home/index.html.erb within layouts/application (9.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 75.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:13:13 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:3
+  Rendered public_activity/team/_create.html.erb (2.3ms)
+  Rendered home/_dashboard.html.erb (10.3ms)
+  Rendered home/index.html.erb within layouts/application (11.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 65.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:13:14 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:3
+  Rendered public_activity/team/_create.html.erb (2.4ms)
+  Rendered home/_dashboard.html.erb (21.1ms)
+  Rendered home/index.html.erb within layouts/application (21.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 74.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:13:15 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 4)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 4]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 9], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:3
+  Rendered public_activity/team/_create.html.erb (2.9ms)
+  Rendered home/_dashboard.html.erb (11.7ms)
+  Rendered home/index.html.erb within layouts/application (12.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 75.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2020-05-29 13:13:20 +0200
+Processing by RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (29.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 84.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-29 13:13:21 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XlDwQDkoOAuVw0RKmjlI3p2svUgBakkvHldmGNeXl6fHRr3vXKNhNbvoGvA9aIT5c/7He82SIC7SOH3izP5zKA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:13:21 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 87ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:13:25 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (0.4ms)
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-05-29 13:13:43 +0200
+Processing by RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 158ms (Views: 154.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-05-29 13:13:54 +0200
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"97e/7S54Ws+4dZGrh7cXuGBI85aMYEcvpHDPU2Q4lbKleJSNQ/9JPuMQit8fvfLf6lsxH4QNkm6fnSBKxiBGaw==", "user"=>{"name"=>"test1234", "email"=>"test@yahoo.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@yahoo.com"], ["LIMIT", 1]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "test@yahoo.com"], ["confirmation_token", "GzgDSpqzBT3cHzJnm5Ys"], ["confirmation_sent_at", "2020-05-29 11:13:54.362393"], ["created_at", "2020-05-29 11:13:54.362086"], ["updated_at", "2020-05-29 11:13:54.362086"], ["name", "test1234"]]
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Home/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.3ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 10.2ms
+Sent mail to test@yahoo.com (26.6ms)
+Date: Fri, 29 May 2020 13:13:54 +0200
+From: no-reply@projekt.com
+Reply-To: no-reply@projekt.com
+To: test@yahoo.com
+Message-ID: <5ed0ee725c3fb_225b3fd86f8f25501000a@Santiagos-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test@yahoo.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=GzgDSpqzBT3cHzJnm5Ys">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 53ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:13:54 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/_home.html.erb (1.4ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 145.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=GzgDSpqzBT3cHzJnm5Ys" for ::1 at 2020-05-29 13:14:01 +0200
+Processing by ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"GzgDSpqzBT3cHzJnm5Ys"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "GzgDSpqzBT3cHzJnm5Ys"], ["LIMIT", 1]]
+  ↳ app/controllers/confirmations_controller.rb:49
+  Rendering devise/confirmations/show.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper.devise_error_messages!`
+is deprecated and it will be removed in the next major version.
+To customize the errors styles please run `rails g devise:views` and modify the
+`devise/shared/error_messages` partial.
+ (called from block in _app_views_devise_confirmations_show_html_erb__1753196250089563090_70198842176760 at /Users/Home/Desktop/Ruby Projects/projekt-app/app/views/devise/confirmations/show.html.erb:5)
+  Rendered devise/confirmations/show.html.erb within layouts/application (3.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 149ms (Views: 145.0ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/user/confirmation" for ::1 at 2020-05-29 13:14:08 +0200
+Processing by ConfirmationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iU2+Lj9IjT1a5H7CvqKxnQbT3ISEWxb7BABdHXVwD0U0G9QZjRE5GMdBr7ZBrt2R2W5dudm20D9cRJc1nq5lPQ==", "user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "confirmation_token"=>"GzgDSpqzBT3cHzJnm5Ys", "commit"=>"Activate"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "GzgDSpqzBT3cHzJnm5Ys"], ["LIMIT", 1]]
+  ↳ app/controllers/confirmations_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:17
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$11$5WRTEZon9Vw6.1QmS0Uywu8zRHP4ywPqurerCYMTWCCv0cKyJZ.iO"], ["updated_at", "2020-05-29 11:14:08.608374"], ["id", 11]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/confirmations_controller.rb:63
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2020-05-29 11:14:08.611618"], ["updated_at", "2020-05-29 11:14:08.612153"], ["id", 11]]
+  ↳ app/controllers/confirmations_controller.rb:63
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/confirmations_controller.rb:63
+Redirected to http://localhost:3000/
+Completed 302 Found in 125ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:14:08 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = NULL)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 11], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  Rendered home/_dashboard.html.erb (5.1ms)
+  Rendered home/index.html.erb within layouts/application (6.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 91.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/teams/new" for ::1 at 2020-05-29 13:14:11 +0200
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:18
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (1.7ms)
+  Rendered teams/new.html.erb within layouts/application (5.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 102.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/teams" for ::1 at 2020-05-29 13:14:34 +0200
+Processing by TeamsController#create as JSON
+  Parameters: {"team"=>{"name"=>"Elon Musk", "updated_at"=>nil, "user_id"=>11, "users_attributes"=>[{"id"=>nil, "name"=>"Elon musk", "email"=>"e@gmail.com", "_destroy"=>nil}, {"id"=>nil, "name"=>"Elon tusk", "email"=>"et@gmail.com", "_destroy"=>nil}]}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:29
+Unpermitted parameters: :updated_at, :user_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "e@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "et@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mTeam Create (2.9ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Elon Musk"], ["created_at", "2020-05-29 11:14:34.446304"], ["updated_at", "2020-05-29 11:14:34.446304"], ["user_id", 11]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "e@gmail.com"], ["confirmation_token", "dY8yEHsYg_i6tx75Rxnx"], ["confirmation_sent_at", "2020-05-29 11:14:34.451258"], ["created_at", "2020-05-29 11:14:34.451119"], ["updated_at", "2020-05-29 11:14:34.451119"], ["name", "Elon musk"], ["team_id", 5]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at", "name", "team_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "et@gmail.com"], ["confirmation_token", "x9s_akwab5QJiiesd9us"], ["confirmation_sent_at", "2020-05-29 11:14:34.452755"], ["created_at", "2020-05-29 11:14:34.452639"], ["updated_at", "2020-05-29 11:14:34.452639"], ["name", "Elon tusk"], ["team_id", 5]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "team_id" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["team_id", 5], ["updated_at", "2020-05-29 11:14:34.454530"], ["id", 11]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[36mPublicActivity::Activity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("trackable_type", "trackable_id", "owner_type", "owner_id", "key", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["trackable_type", "Team"], ["trackable_id", 5], ["owner_type", "User"], ["owner_id", 11], ["key", "team.create"], ["created_at", "2020-05-29 11:14:34.461474"], ["updated_at", "2020-05-29 11:14:34.461474"]]
+  ↳ app/controllers/teams_controller.rb:33
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:33
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 10.7ms
+Sent mail to e@gmail.com (17.7ms)
+Date: Fri, 29 May 2020 13:14:34 +0200
+From: no-reply@projekt.com
+Reply-To: no-reply@projekt.com
+To: e@gmail.com
+Message-ID: <5ed0ee9a74475_225b3fd86f8f26f4100195@Santiagos-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome e@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=dY8yEHsYg_i6tx75Rxnx">Confirm my account</a></p>
+
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.8ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 11.7ms
+Sent mail to et@gmail.com (23.2ms)
+Date: Fri, 29 May 2020 13:14:34 +0200
+From: no-reply@projekt.com
+Reply-To: no-reply@projekt.com
+To: et@gmail.com
+Message-ID: <5ed0ee9a7ba39_225b3fd86f8f26f410021b@Santiagos-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome et@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=x9s_akwab5QJiiesd9us">Confirm my account</a></p>
+
+  Rendering teams/show.json.jbuilder
+  Rendered teams/_team.json.jbuilder (1.2ms)
+  Rendered teams/show.json.jbuilder (6.4ms)
+Completed 201 Created in 103ms (Views: 12.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/teams/5" for ::1 at 2020-05-29 13:14:34 +0200
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:70
+  Rendering teams/show.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/teams/show.html.erb:39
+  Rendered teams/show.html.erb within layouts/application (109.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 136ms (Views: 132.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:14:36 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 5]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 5]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 11], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:3
+  Rendered public_activity/team/_create.html.erb (2.9ms)
+  Rendered home/_dashboard.html.erb (14.2ms)
+  Rendered home/index.html.erb within layouts/application (19.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 108.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/new" for ::1 at 2020-05-29 13:14:40 +0200
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:18
+  Rendering projects/new.html.erb within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 5)[0m
+  ↳ app/views/projects/_form.html.erb:21
+  Rendered projects/_form.html.erb (26.5ms)
+  Rendered projects/new.html.erb within layouts/application (29.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 156ms (Views: 148.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects" for ::1 at 2020-05-29 13:14:49 +0200
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F9a0RRgLoCAONGE0bPtVHU+lcvDAKtaU0SDBoFI+yMcqgIg2FdUEJhtgFZXKPqyOX5TVg602KJ1BZ16G8RPKw==", "project"=>{"name"=>"SpaceX Launch", "description"=>"Test123", "team_id"=>"5"}, "commit"=>"Create Project"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[36mProject Create (1.0ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "created_at", "updated_at", "user_id", "team_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "SpaceX Launch"], ["description", "Test123"], ["created_at", "2020-05-29 11:14:49.378984"], ["updated_at", "2020-05-29 11:14:49.378984"], ["user_id", 11], ["team_id", 5]]
+  ↳ app/controllers/projects_controller.rb:33
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projects_controller.rb:33
+Redirected to http://localhost:3000/projects/6
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/projects/6" for ::1 at 2020-05-29 13:14:49 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:70
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/projects/show.html.erb:11
+  Rendered projects/show.html.erb within layouts/application (8.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:39
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-29 13:14:52 +0200
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3
+  Rendering home/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects" WHERE (team_id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:8
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE (team_id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:19
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/_dashboard.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "teams" WHERE (id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:35
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE (id = 5)[0m
+  ↳ app/views/home/_dashboard.html.erb:46
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 5]]
+  ↳ app/views/home/_dashboard.html.erb:51
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."team_id" = ?[0m  [["team_id", 5]]
+  ↳ app/views/home/_dashboard.html.erb:52
+  [1m[36mPublicActivity::Activity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."owner_id" = ? AND "activities"."owner_type" = ? ORDER BY created_at DESC[0m  [["owner_id", 11], ["owner_type", "User"]]
+  ↳ app/views/home/_dashboard.html.erb:62
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/public_activity/team/_create.html.erb:3
+  Rendered public_activity/team/_create.html.erb (1.9ms)
+  Rendered home/_dashboard.html.erb (15.4ms)
+  Rendered home/index.html.erb within layouts/application (18.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 87.2ms | ActiveRecord: 2.3ms)
+
+
